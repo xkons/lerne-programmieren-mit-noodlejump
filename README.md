@@ -2,7 +2,10 @@
 
 Noodlejump Template-Projekt für das #FutureCamp19.
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/noodlejump-stackblitz)
+## Neuen Spielplatz anlegen
+
+* Noodlejump-Vorlage auf [StackBlitz](https://stackblitz.com/edit/noodlejump-stackblitz) öffnen
+* Neuen "Fork" erstellen
 
 ## Offene Aufgaben
 
