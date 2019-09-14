@@ -1,7 +1,5 @@
 import './style.css';
 
-var score = 0;
-
 class Play {
 
   preload() {
@@ -29,12 +27,17 @@ class Play {
     this.platformYMin = 99999;
 
     this.jumpCount = 0;
+    this.score = 0;
     this.scoreMultiplicator = 1;
 
     // create platforms
     this.platformsCreate();
 
-    this.scoreText = this.add.text(0, 0, `${score} Punkte`);
+    this.scoreText = this.add.text(
+      0, 0, `${this.score} Punkte`,
+      {
+        'class': 'scoretext'
+      });
 
     // create hero
     this.heroCreate();
@@ -55,7 +58,7 @@ class Play {
     this.camera.y = this.cameraYMin;
 
     this.scoreText.y = Math.min(this.cameraYMin, 0);
-    this.scoreText.text = `${score} Punkte`;
+    this.scoreText.text = `${this.score} Punkte`;
 
     // hero collisions and movement
     this.physics.arcade.collide(this.hero, this.platforms);
@@ -139,12 +142,12 @@ class Play {
     // handle hero jumping
     if ((this.cursor.up.isDown || this.jumpCount > 0) && this.hero.body.touching.down) {
       if (this.jumpCount === 0) {
-        score = 0;
+        this.score = 0;
       } else {
-        score += 1 * this.scoreMultiplicator;
+        this.score += 1 * this.scoreMultiplicator;
       }
 
-      this.scoreText.text = `${score} Punkte`;
+      this.scoreText.text = `${this.score} Punkte`;
 
       if (this.jumpCount % 10 === 0) {
         this.scoreMultiplicator++;
