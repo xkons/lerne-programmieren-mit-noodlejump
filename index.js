@@ -1,3 +1,5 @@
+import './style.css';
+
 var score = 0;
 
 class Play {
@@ -9,7 +11,7 @@ class Play {
 
   create() {
     // background color
-    this.stage.backgroundColor = '#6bf';
+    this.stage.backgroundColor = '#66BBFF';
 
     // scaling
     this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -32,7 +34,7 @@ class Play {
     // create platforms
     this.platformsCreate();
 
-    this.scoreText = this.add.text(0, 0, `${score} Punkte`, { fontFamily: '"Roboto Condensed"', fill: "red" });
+    this.scoreText = this.add.text(0, 0, `${score} Punkte`);
 
     // create hero
     this.heroCreate();
