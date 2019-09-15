@@ -28,7 +28,7 @@ class Noodlejump {
 
   /**
    * Diese Funktion wird beim Anlegen des Spiels als erstes ausgeführt.
-   * Vor allem wird hier das Spielfeld erzeugt.
+   * Vor allem wird hier die Spielwelt erzeugt.
    * https://photonstorm.github.io/phaser-ce/Phaser.State.html#create
    */
   create() {
@@ -196,13 +196,17 @@ class Noodlejump {
     this.hero.body.checkCollision.right = false;
   }
 
+  /**
+   * Hilfsmethode, um herauszufinden ob mit der Maus (mousePointer) oder
+   * dem Finger (pointer1) in der Spielwelt geklickt wurde.
+   */
   getActivePointer() {
     if (this.input.mousePointer.isDown) {
       return this.input.mousePointer;
     } else if (this.input.pointer1.isDown) {
       return this.input.pointer1;
     }
-    return null;
+    return null; // Nichts von beidem
   }
 
   /**
@@ -211,14 +215,14 @@ class Noodlejump {
    */
   heroMove() {
     // Festlegen des Touch Pointer (mousePointer für Maus; pointer1 für Finger)
-    const pointer = this.getActivePointer();
+    const activePointer = this.getActivePointer();
 
     // Links-/Rechts-Bewegungen des Helden programmieren
-    if (pointer) {
+    if (activePointer) {
       // Beim Touch-Input wird nur einmal die Sprungweite berechnet.
       // Danach muss erst wieder losgelassen werden.
       if (!this.buttonPressed) {
-        var distanceFactor = pointer.x - this.hero.x;
+        var distanceFactor = activePointer.x - this.hero.x;
         this.hero.body.velocity.x = distanceFactor <= 0 ? -200 : 200;
         this.buttonPressed = true;
       }
@@ -236,7 +240,7 @@ class Noodlejump {
     // - ein Finger-Touch ausgeführt wurde (pointer via getActivePointer())
     // - Pfeil-oben gedrückt wurde
     // - bereits einmal gesprungen wurde
-    var gameStarted = pointer || this.cursor.up.isDown || this.jumpCount > 0;
+    var gameStarted = activePointer || this.cursor.up.isDown || this.jumpCount > 0;
 
     // Sprung des Helden programmieren
     if (gameStarted && this.hero.body.touching.down) {
@@ -264,7 +268,7 @@ class Noodlejump {
     }
 
     // "Wrap" klappt die Ränder der Welt um, so dass man z.B. über den rechten
-    // Spielfeldrand wieder zum linken Rand kommt.
+    // Weltrand wieder zum linken Rand kommt.
     this.world.wrap(this.hero, this.hero.width / 2, false);
 
     // Verfolge den gesamten Weg, den der Held zurückgelegt hat
