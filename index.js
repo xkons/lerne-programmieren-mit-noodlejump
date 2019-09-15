@@ -6,7 +6,7 @@ class Noodlejump {
    * https://phaser.io/docs/2.6.2/Phaser.Game.html#load
    */
   preload() {
-    // Bild des "Hero" laden
+    // Bild des Helden laden
     this.load.image('hero', 'https://raw.githubusercontent.com/BastiTee/noodlejump/master/images/dog.png');
     // Pixelbild laden (wird für die Plattformen verwendet)
     this.load.image('pixel', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/pixel_1.png');
@@ -39,7 +39,7 @@ class Noodlejump {
 
     // Plattformen anlegen
     this.platformsCreate();
-    // Hero anlegen
+    // Held anlegen
     this.heroCreate();
 
     // Variablen um die Punktzahlen zu berechnen und anzuzeigen
@@ -52,7 +52,6 @@ class Noodlejump {
    * Am Spielende löscht diese Funktion alle erzeugten Objekte.
    */
   shutdown() {
-    // reset everything, or the world will be messed up
     this.world.setBounds(0, 0, this.game.width, this.game.height);
     this.cursor = null;
     this.hero.destroy();
@@ -61,32 +60,49 @@ class Noodlejump {
     this.platforms = null;
   }
 
+  /**
+   * Hauptfunktion des Spiels, dass automatisch von der Phaser-Engine
+   * aufgerufen wird.
+   * https://phaser.io/docs/2.6.2/Phaser.Game.html#update
+   * 
+   */
   update() {
-    // this is where the main magic happens
-    // the y offset and the height of the world are adjusted
-    // to match the highest point the hero has reached
-    this.world.setBounds(0, -this.hero.yChange, this.world.width, this.game.height + this.hero.yChange);
+    // Scrolling der Welt. Der Y-Offset (yChange) und die Höhe der Welt
+    // wird angepasst an den höchsten Punkt, den der Held erreicht hat.
+    // (https://phaser.io/docs/2.6.2/Phaser.World.html#setBounds)
+    this.world.setBounds(0, -this.hero.yChange,
+      this.world.width, this.game.height + this.hero.yChange);
 
-    // the built in camera follow methods won't work for our needs
-    // this is a custom follow style that will not ever move down, it only moves up
-    this.cameraYMin = Math.min(this.cameraYMin, this.hero.y - this.game.height + 130);
+    // Programmierung der Kamerafahrt
+    this.cameraYMin = Math.min(
+      this.cameraYMin, 
+      this.hero.y - this.game.height + 130);
     this.camera.y = this.cameraYMin;
 
+    // Positionieren der Punktezahl innerhalb der Welt
     this.scoreText.y = Math.min(this.cameraYMin, 0);
     this.scoreText.text = `${this.score} Punkte`;
 
-    // hero collisions and movement
+    // Kollisionen und Bewegung des Helden
     this.physics.arcade.collide(this.hero, this.platforms);
     this.heroMove();
 
-    // for each plat form, find out which is the highest
-    // if one goes below the camera view, then create a new one at a distance from the highest one
-    // these are pooled so they are very performant
+    // Prüfe für jede Plattform..
     this.platforms.forEachAlive(function (elem) {
+      // .. ob sie die höchste ist
       this.platformYMin = Math.min(this.platformYMin, elem.y);
+      // .. ob sie aus der Kamerasicht verschwunden ist..
       if (elem.y > this.camera.y + this.game.height) {
+        // .. wenn ja, lösche sie ..
         elem.kill();
-        this.platformsCreateOne(this.rnd.integerInRange(0, this.world.width - 50), this.platformYMin - 100, 50);
+        // .. und lege eine neue oberhalb der höchsten an
+        this.platformsCreateOne(
+          // X-Achse; Ausrichtung links/rechts
+          this.rnd.integerInRange(0, this.world.width - 50),
+          // Y-Achse; Ausrichtung oben/unten
+          this.platformYMin - 100,
+          // Breite der Plattform 
+          50);
       }
     }, this);
   }
