@@ -1,9 +1,23 @@
+/**
+ * Die Klasse Noodlejump ist verantwortlich für die Spiellogik und all das,
+ * was man auf dem Bildschirm sieht. Sie nutzt eine Programmbibliothek
+ * names "Phaser". Phaser ist eine Spiele-Engine, wie auch Unreal oder Unity.
+ * Nur eben für den Browser.
+ * 
+ * Die Funktionen preload(), create(), shutdown() und update() steuern
+ * den State (Zustand) von Phaser direkt an. 
+ * https://photonstorm.github.io/phaser-ce/Phaser.State.html
+ * 
+ * Alle anderen Funktionen sind spezifisch für dieses Spiel.
+ * 
+ */
 class Noodlejump {
 
   /**
    * Diese Funktion wird ausgeführt, bevor das Spiel geladen wird, um 
    * Bilder zwischenzuspeichern, die das Spiel verwendet.
-   * https://phaser.io/docs/2.6.2/Phaser.Game.html#load
+   * https://photonstorm.github.io/phaser-ce/Phaser.State.html#preload
+   * https://photonstorm.github.io/phaser-ce/Phaser.Game.html#load
    */
   preload() {
     // Bild des Helden laden
@@ -15,22 +29,23 @@ class Noodlejump {
   /**
    * Diese Funktion wird beim Anlegen des Spiels als erstes ausgeführt.
    * Vor allem wird hier das Spielfeld erzeugt.
+   * https://photonstorm.github.io/phaser-ce/Phaser.State.html#create
    */
   create() {
-    // Hintergrundfarbe (https://phaser.io/docs/2.6.2/Phaser.Stage.html#backgroundColor)
+    // Hintergrundfarbe (https://photonstorm.github.io/phaser-ce/Phaser.Stage.html#backgroundColor)
     this.stage.backgroundColor = '#66BBFF';
 
-    // Fenstergröße (https://phaser.io/docs/2.6.2/Phaser.ScaleManager.html)
+    // Fenstergröße (https://photonstorm.github.io/phaser-ce/Phaser.ScaleManager.html)
     this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     this.scale.maxWidth = this.game.width;
     this.scale.maxHeight = this.game.height;
     this.scale.pageAlignHorizontally = true;
     this.scale.pageAlignVertically = true;
 
-    // Spielphysik (https://phaser.io/docs/2.6.2/Phaser.Physics.html)
+    // Spielphysik (https://photonstorm.github.io/phaser-ce/Phaser.Physics.html)
     this.physics.startSystem(Phaser.Physics.ARCADE);
 
-    // Spielsteuerung (https://phaser.io/docs/2.6.2/Phaser.Input.html)
+    // Spielsteuerung (https://photonstorm.github.io/phaser-ce/Phaser.Input.html)
     this.cursor = this.input.keyboard.createCursorKeys();
 
     // Variablen, um Kamera und Plattformen zu verfolgen
@@ -50,6 +65,7 @@ class Noodlejump {
 
   /**
    * Am Spielende löscht diese Funktion alle erzeugten Objekte.
+   * https://photonstorm.github.io/phaser-ce/Phaser.State.html#shutdown
    */
   shutdown() {
     this.world.setBounds(0, 0, this.game.width, this.game.height);
@@ -63,13 +79,13 @@ class Noodlejump {
   /**
    * Hauptfunktion des Spiels, dass automatisch von der Phaser-Engine
    * aufgerufen wird.
-   * https://phaser.io/docs/2.6.2/Phaser.Game.html#update
+   * https://photonstorm.github.io/phaser-ce/Phaser.State.html#update
    * 
    */
   update() {
     // Scrolling der Welt. Der Y-Offset (yChange) und die Höhe der Welt
     // wird angepasst an den höchsten Punkt, den der Held erreicht hat.
-    // (https://phaser.io/docs/2.6.2/Phaser.World.html#setBounds)
+    // (https://photonstorm.github.io/phaser-ce/Phaser.World.html#setBounds)
     this.world.setBounds(0, -this.hero.yChange,
       this.world.width, this.game.height + this.hero.yChange);
 
@@ -110,10 +126,10 @@ class Noodlejump {
   /**
    * Legt die Plattformen für das Spiel an. Hier wird add()
    * verwendet, um neue Spielobjekte anzulegen.
-   * https://phaser.io/docs/2.6.2/Phaser.Game.html#add
+   * https://photonstorm.github.io/phaser-ce/Phaser.Game.html#add
    */
   platformsCreate() {
-    // Neue Gruppe für Plattformen anlegen (https://phaser.io/docs/2.6.2/Phaser.Group.html)
+    // Neue Gruppe für Plattformen anlegen (https://photonstorm.github.io/phaser-ce/Phaser.Group.html)
     this.platforms = this.add.group();
     this.platforms.enableBody = true;
     this.platforms.createMultiple(10, 'pixel');
@@ -151,10 +167,10 @@ class Noodlejump {
   /**
    * Legt den Helden des Spiels an. Hier wird add()
    * verwendet, um neue Spielobjekte anzulegen.
-   * https://phaser.io/docs/2.6.2/Phaser.Game.html#add
+   * https://photonstorm.github.io/phaser-ce/Phaser.Game.html#add
    */
   heroCreate() {
-    // Neuen "Sprite" anlegen (https://phaser.io/docs/2.6.2/Phaser.GameObjectFactory.html#sprite)
+    // Neuen "Sprite" anlegen (https://photonstorm.github.io/phaser-ce/Phaser.GameObjectFactory.html#sprite)
     this.hero = game.add.sprite(this.world.centerX, this.world.height - 36, 'hero');
     this.hero.anchor.set(0.5);
     // Sprungkraft des Helden
@@ -167,7 +183,7 @@ class Noodlejump {
     // Kollisionen mit den Plattformen einstellen. Wir stellen es so ein, 
     // dass der Held nur mit den Füßen mit Plattformen kollidiert
 
-    // Arcade-Physik (https://phaser.io/docs/2.6.2/Phaser.Physics.Arcade.html)
+    // Arcade-Physik (https://photonstorm.github.io/phaser-ce/Phaser.Physics.Arcade.html)
     this.physics.arcade.enable(this.hero);
     // Anziehungskraft des Helden
     this.hero.body.gravity.y = 500;

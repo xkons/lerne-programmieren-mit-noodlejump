@@ -27,7 +27,7 @@ Noodlejump Template-Projekt für das [#FutureCamp19](https://futurecamp.digital/
 
 ## Nachlesen
 
-* [Dokumentation der Phaser-Engine](https://phaser.io/docs/2.6.2/index)
+* [Dokumentation der Phaser-Engine](https://photonstorm.github.io/phaser-ce/)
 * [Phaser programmieren lernen](https://phaser.io/learn)
 
 ----
