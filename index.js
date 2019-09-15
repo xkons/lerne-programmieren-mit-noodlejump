@@ -3,7 +3,7 @@ class Noodlejump {
   /**
    * Diese Funktion wird ausgeführt, bevor das Spiel geladen wird, um 
    * Bilder zwischenzuspeichern, die das Spiel verwendet.
-   * https://phaser.io/docs/2.2.2/Phaser.Game.html#load
+   * https://phaser.io/docs/2.6.2/Phaser.Game.html#load
    */
   preload() {
     // Bild des "Hero" laden
@@ -17,21 +17,20 @@ class Noodlejump {
    * Vor allem wird hier das Spielfeld erzeugt.
    */
   create() {
-    // Hintergrundfarbe (https://phaser.io/docs/2.2.2/Phaser.Stage.html#backgroundColor)
+    // Hintergrundfarbe (https://phaser.io/docs/2.6.2/Phaser.Stage.html#backgroundColor)
     this.stage.backgroundColor = '#66BBFF';
 
-    // Fenstergröße (https://phaser.io/docs/2.2.2/Phaser.ScaleManager.html)
+    // Fenstergröße (https://phaser.io/docs/2.6.2/Phaser.ScaleManager.html)
     this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     this.scale.maxWidth = this.game.width;
     this.scale.maxHeight = this.game.height;
     this.scale.pageAlignHorizontally = true;
     this.scale.pageAlignVertically = true;
-    this.scale.setScreenSize(true);
 
-    // Spielphysik (https://phaser.io/docs/2.2.2/Phaser.Physics.html)
+    // Spielphysik (https://phaser.io/docs/2.6.2/Phaser.Physics.html)
     this.physics.startSystem(Phaser.Physics.ARCADE);
 
-    // Spielsteuerung (https://phaser.io/docs/2.2.2/Phaser.Input.html)
+    // Spielsteuerung (https://phaser.io/docs/2.6.2/Phaser.Input.html)
     this.cursor = this.input.keyboard.createCursorKeys();
 
     // Variablen, um Kamera und Plattformen zu verfolgen
@@ -95,10 +94,10 @@ class Noodlejump {
   /**
    * Legt die Plattformen für das Spiel an. Hier wird add()
    * verwendet, um neue Spielobjekte anzulegen.
-   * https://phaser.io/docs/2.2.2/Phaser.Game.html#add
+   * https://phaser.io/docs/2.6.2/Phaser.Game.html#add
    */
   platformsCreate() {
-    // Neue Gruppe für Plattformen anlegen (https://phaser.io/docs/2.2.2/Phaser.Group.html)
+    // Neue Gruppe für Plattformen anlegen (https://phaser.io/docs/2.6.2/Phaser.Group.html)
     this.platforms = this.add.group();
     this.platforms.enableBody = true;
     this.platforms.createMultiple(10, 'pixel');
@@ -136,10 +135,10 @@ class Noodlejump {
   /**
    * Legt den Helden des Spiels an. Hier wird add()
    * verwendet, um neue Spielobjekte anzulegen.
-   * https://phaser.io/docs/2.2.2/Phaser.Game.html#add
+   * https://phaser.io/docs/2.6.2/Phaser.Game.html#add
    */
   heroCreate() {
-    // Neuen "Sprite" anlegen (https://phaser.io/docs/2.2.2/Phaser.GameObjectFactory.html#sprite)
+    // Neuen "Sprite" anlegen (https://phaser.io/docs/2.6.2/Phaser.GameObjectFactory.html#sprite)
     this.hero = game.add.sprite(this.world.centerX, this.world.height - 36, 'hero');
     this.hero.anchor.set(0.5);
     // Sprungkraft des Helden
@@ -152,7 +151,7 @@ class Noodlejump {
     // Kollisionen mit den Plattformen einstellen. Wir stellen es so ein, 
     // dass der Held nur mit den Füßen mit Plattformen kollidiert
 
-    // Arcade-Physik (https://phaser.io/docs/2.2.2/Phaser.Physics.Arcade.html)
+    // Arcade-Physik (https://phaser.io/docs/2.6.2/Phaser.Physics.Arcade.html)
     this.physics.arcade.enable(this.hero);
     // Anziehungskraft des Helden
     this.hero.body.gravity.y = 500;
