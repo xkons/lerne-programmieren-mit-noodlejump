@@ -4,7 +4,7 @@ Noodlejump Template-Projekt für das #FutureCamp19.
 
 ## Neuen Spielplatz anlegen
 
-* Noodlejump-Vorlage auf [StackBlitz](https://stackblitz.com/edit/noodlejump-stackblitz) öffnen
+* Noodlejump-Vorlage auf [StackBlitz](https://stackblitz.com/edit/noodlejump) öffnen
 * Neuen "Fork" erstellen
 * Warten bis die Seite neu lädt
 * Los geht's!
