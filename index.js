@@ -196,16 +196,25 @@ class Noodlejump {
     this.hero.body.checkCollision.right = false;
   }
 
+  getActivePointer() {
+    if (this.input.mousePointer.isDown) {
+      return this.input.mousePointer;
+    } else if (this.input.pointer1.isDown) {
+      return this.input.pointer1;
+    }
+    return null;
+  }
+
   /**
    * Diese Funktion programmiert die Bewegung des Helden in Abhängigkeit davon,
    * welche Tasten man drückt.
    */
   heroMove() {
     // Festlegen des Touch Pointer (mousePointer für Maus; pointer1 für Finger)
-    const pointer = this.input.pointer1;
+    const pointer = this.getActivePointer();
 
     // Links-/Rechts-Bewegungen des Helden programmieren
-    if (pointer.isDown) {
+    if (pointer) {
       // Beim Touch-Input wird nur einmal die Sprungweite berechnet.
       // Danach muss erst wieder losgelassen werden.
       if (!this.buttonPressed) {
@@ -222,9 +231,12 @@ class Noodlejump {
       this.hero.body.velocity.x = 0;
     }
 
-    // Das Spiel hat begonnen wenn Pfeil-oben gedrückt wurde oder der Bildschirm
-    // berührt wurde oder schon ein Sprung gemacht wurde.
-    var gameStarted = pointer.isDown || this.cursor.up.isDown || this.jumpCount > 0;
+    // Das Spiel hat begonnen wenn..
+    // - Maus geklickt wurde (pointer via getActivePointer())
+    // - ein Finger-Touch ausgeführt wurde (pointer via getActivePointer())
+    // - Pfeil-oben gedrückt wurde
+    // - bereits einmal gesprungen wurde
+    var gameStarted = pointer || this.cursor.up.isDown || this.jumpCount > 0;
 
     // Sprung des Helden programmieren
     if (gameStarted && this.hero.body.touching.down) {
