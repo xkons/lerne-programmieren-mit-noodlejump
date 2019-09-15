@@ -35,11 +35,11 @@ Noodlejump Template-Projekt für das [#FutureCamp19](https://futurecamp.digital/
 ## Offene Aufgaben für das #FutureCamp19
 
 * Hürden zur Programmierung der Features identifizieren (z.B. Syntax, Funktionen, etc.)
-* Spiel mobil-fähig machen (Touch input, Skalieren)
 * Einführungsslides vorbereiten falls nötig
 
 ## Erledigte Aufgaben
 
+* Spiel mobil-fähig machen (Touch input, Skalieren)
 * Auf neueste Phaser-Version updaten
 * Erklärung zum Erstellen eines Projekts vom Template runterschreiben
 * Minimales Setup, z.B. mit https://stackblitz.com/ aufschreiben

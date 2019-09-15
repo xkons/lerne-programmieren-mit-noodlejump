@@ -52,6 +52,9 @@ class Noodlejump {
     this.cameraYMin = 99999;
     this.platformYMin = 99999;
 
+    // Variable, um zu verfolgen, ob gerade eine Taste gedrückt wird
+    this.buttonPressed = false;
+
     // Plattformen anlegen
     this.platformsCreate();
     // Held anlegen
@@ -91,7 +94,7 @@ class Noodlejump {
 
     // Programmierung der Kamerafahrt
     this.cameraYMin = Math.min(
-      this.cameraYMin, 
+      this.cameraYMin,
       this.hero.y - this.game.height + 130);
     this.camera.y = this.cameraYMin;
 
@@ -198,20 +201,33 @@ class Noodlejump {
    * welche Tasten man drückt.
    */
   heroMove() {
+    // Festlegen des Touch Pointer (mousePointer für Maus; pointer1 für Finger)
+    const pointer = this.input.pointer1;
+
     // Links-/Rechts-Bewegungen des Helden programmieren
-    if (this.cursor.left.isDown) {
+    if (pointer.isDown) {
+      // Beim Touch-Input wird nur einmal die Sprungweite berechnet.
+      // Danach muss erst wieder losgelassen werden.
+      if (!this.buttonPressed) {
+        var distanceFactor = pointer.x - this.hero.x;
+        this.hero.body.velocity.x = distanceFactor <= 0 ? -200 : 200;
+        this.buttonPressed = true;
+      }
+    } else if (this.cursor.left.isDown) {
       this.hero.body.velocity.x = -200;
     } else if (this.cursor.right.isDown) {
       this.hero.body.velocity.x = 200;
     } else {
+      this.buttonPressed = false;
       this.hero.body.velocity.x = 0;
     }
 
+    // Das Spiel hat begonnen wenn Pfeil-oben gedrückt wurde oder der Bildschirm
+    // berührt wurde oder schon ein Sprung gemacht wurde.
+    var gameStarted = pointer.isDown || this.cursor.up.isDown || this.jumpCount > 0;
+
     // Sprung des Helden programmieren
-    if (
-      (this.cursor.up.isDown || this.jumpCount > 0) &&
-      this.hero.body.touching.down
-    ) {
+    if (gameStarted && this.hero.body.touching.down) {
       // Beim ersten Sprung wird die Punktzahl auf 0 gesetzt
       if (this.jumpCount === 0) {
         this.score = 0;
