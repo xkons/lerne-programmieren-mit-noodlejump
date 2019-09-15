@@ -12,10 +12,13 @@ Noodlejump Template-Projekt für das [#FutureCamp19](https://futurecamp.digital/
 ## Programmieraufgaben
 
 * Bild des Helden austauschen
-* Einen Punktemultiplikator programmieren
+* (Hintergrund-) Farben ändern
+* Das Spiel mit der Zeit attraktiver machen
+  * Einen Punktemultiplikator nach jedem 10-ten Sprung vergeben
+  * Bonusplattformen mit extra Punkten
 * Das Spiel mit der Zeit schwerer machen
   * Gravitation nach jedem 10-ten Sprung erhöhen
-  * Sprungkraft nach jedem 10-ten Sprung verringern
+  * Sprungkraft/-weite nach jedem 10-ten Sprung verringern
 * Spiel schwerer/leichter machen
   * Helden mit allen Seiten mit den Plattformen zusammenstoßen lassen
   * Plattformen enger/weiter auseinander machen
