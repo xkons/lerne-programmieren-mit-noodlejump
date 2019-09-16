@@ -26,6 +26,7 @@ Noodlejump Template-Projekt für das [#FutureCamp19](https://futurecamp.digital/
   * Verbieten, dass man aus dem Bildrand springen kann
   * Helden kürzer oder weiter seitlich bewegen lassen
   * Plattformen sich hin und her bewegen lassen (schwer!)
+* Den Spielstand erst nach dem ersten neuen Sprung entfernen
 * Für ein paar Sekunden "Spiel beendet!" einblenden
 
 ## Nachlesen
