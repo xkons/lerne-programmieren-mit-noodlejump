@@ -36,10 +36,12 @@ Noodlejump Template-Projekt für das [#FutureCamp19](https://futurecamp.digital/
 
 ----
 
-## Offene Aufgaben für das #FutureCamp19
+## #FutureCamp19
 
-* Hürden zur Programmierung der Features identifizieren (z.B. Syntax, Funktionen, etc.)
-* Einführungsslides vorbereiten falls nötig
+* Search-driven development
+* Flipcharts um Sachen zu erklären
+* Jeder 5 Sätzen, warum er Programmierer geworden ist
+* Kreppband und Edding
 
 ## Erledigte Aufgaben
 
