@@ -63,7 +63,6 @@ class Noodlejump {
     // Variablen um die Punktzahlen zu berechnen und anzuzeigen
     this.jumpCount = 0;
     this.score = 0;
-    this.scoreText = this.add.text(0, 0, `0 Punkte`);
   }
 
   /**
@@ -97,10 +96,6 @@ class Noodlejump {
       this.cameraYMin,
       this.hero.y - this.game.height + 130);
     this.camera.y = this.cameraYMin;
-
-    // Positionieren der Punktezahl innerhalb der Welt
-    this.scoreText.y = Math.min(this.cameraYMin, 0);
-    this.scoreText.text = `${this.score} Punkte`;
 
     // Kollisionen und Bewegung des Helden
     this.physics.arcade.collide(this.hero, this.platforms);
@@ -251,9 +246,6 @@ class Noodlejump {
       } else {
         this.score += 1;
       }
-
-      // Spielstand aktualisieren
-      this.scoreText.text = `${this.score} Punkte`;
 
       // Nach jedem 10-ten Sprung..
       if (this.jumpCount % 10 === 0) {
