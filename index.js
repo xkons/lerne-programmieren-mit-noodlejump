@@ -61,6 +61,7 @@ class Noodlejump extends NoodlejumpAdvanced {
     // Eingene Zählvariablen
     this.anzahlSpruenge = 0;
     this.punktzahl = 0;
+    this.punkteMultiplikator = 1;
 
     // Erstelle Text in linker oberer Ecke um Punkteanzahl anzuzeigen
     this.punkteAnzeige = this.add.text(0, 0, `0 Punkte`);
@@ -107,12 +108,13 @@ class Noodlejump extends NoodlejumpAdvanced {
         this.punktzahl = 0;
         // Danach um 1 erhöht
       } else {
-        this.punktzahl += 1;
+        this.punktzahl = this.punktzahl + 1 * this.punkteMultiplikator;
       }
 
       // Nach jedem 10-ten Sprung..
       if (this.anzahlSpruenge !== 0 && this.anzahlSpruenge % 10 === 0) {
         // .. mache etwas – zum Beispiel das Spiel schwerer ;)
+        this.punkteMultiplikator++;
       }
 
       // Der eigentliche Sprung bzw. die Bewegung des Helden wird ausgeführt
