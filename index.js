@@ -248,7 +248,7 @@ class Noodlejump {
       }
 
       // Nach jedem 10-ten Sprung..
-      if (this.jumpCount % 10 === 0) {
+      if (this.jumpCount !== 0 && this.jumpCount % 10 === 0) {
         // .. mache etwas – zum Beispiel das Spiel schwerer ;)
       }
 
