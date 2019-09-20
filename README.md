@@ -16,7 +16,6 @@ Noodlejump Template-Projekt für das [#FutureCamp19](https://futurecamp.digital/
 * Einen Punktemultiplikator nach jedem 10-ten Sprung vergeben
 * Velocity/Scrollgeschwindigkeit der Welt nach jedem 10-ten Sprung erhöhen
 * Gravitation nach jedem 10-ten Sprung erhöhen
-* Den Spielstand nach Beginn der neuen Runde zurücksetzen (so dass man mit Punkten angeben kann)
 * Extra-Features (nach Schwierigkeit)
   * (Hintergrund-) Farben ändern
   * Game Over Einblendung mit erzielter Punktzahl
