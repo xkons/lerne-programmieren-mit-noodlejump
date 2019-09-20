@@ -63,6 +63,7 @@ class Noodlejump {
     // Variablen um die Punktzahlen zu berechnen und anzuzeigen
     this.jumpCount = 0;
     this.score = 0;
+    this.scoreMultiplicator = 1;
   }
 
   /**
@@ -244,12 +245,13 @@ class Noodlejump {
         this.score = 0;
         // Danach um 1 erhöht
       } else {
-        this.score += 1;
+        this.score = this.score + 1 * this.scoreMultiplicator;
       }
 
       // Nach jedem 10-ten Sprung..
       if (this.jumpCount % 10 === 0) {
         // .. mache etwas – zum Beispiel das Spiel schwerer ;)
+        this.scoreMultiplicator++;
       }
 
       // Der eigentliche Sprung
