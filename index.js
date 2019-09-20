@@ -21,7 +21,7 @@ class Noodlejump {
    */
   preload() {
     // Bild des Helden laden
-    this.load.image('hero', 'images/leanixlogo.jpeg');
+    this.load.image('hero', 'https://raw.githubusercontent.com/BastiTee/noodlejump-stackblitz/master/images/leanixlogo.jpeg');
     // Pixelbild laden (wird für die Plattformen verwendet)
     this.load.image('pixel', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/pixel_1.png');
   }
