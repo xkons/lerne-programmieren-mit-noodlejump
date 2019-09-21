@@ -30,11 +30,3 @@ Noodlejump Template-Projekt für das [#FutureCamp19](https://futurecamp.digital/
 
 * [Dokumentation der Phaser-Engine](https://photonstorm.github.io/phaser-ce/)
 * [Phaser programmieren lernen](https://phaser.io/learn)
-
-## #FutureCamp19
-
-* Search-driven development
-* Flipcharts um Sachen zu erklären
-* Jeder 5 Sätzen, warum er Programmierer geworden ist
-* Kreppband und Edding
-* Pullrequest vorbereiten mit einzelnen Lösungen
