@@ -75,7 +75,7 @@ class Noodlejump extends NoodlejumpAdvanced {
     this.kameraYMinimum = Math.min(this.kameraYMinimum, this.held.y - this.game.height + 130);
     this.camera.y = this.kameraYMinimum;
     
-    this.punkteAnzeige.text = `${this.score} Punkte`;
+    this.punkteAnzeige.text = `${this.punktzahl} Punkte`;
 
     this.weltBewegen();
     this.heldBewegen();
@@ -105,7 +105,7 @@ class Noodlejump extends NoodlejumpAdvanced {
       }
       
       // Spielstandtext aktualisieren	
-      this.punkteAnzeige.text = `${this.score} Punkte`;
+      this.punkteAnzeige.text = `${this.punktzahl} Punkte`;
 
       // Nach jedem 10-ten Sprung..
       if (this.anzahlSpruenge !== 0 && this.anzahlSpruenge % 10 === 0) {
