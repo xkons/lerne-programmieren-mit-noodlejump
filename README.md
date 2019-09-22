@@ -14,8 +14,7 @@ Noodlejump Template-Projekt für das [#FutureCamp19](https://futurecamp.digital/
 * Bild des Helden austauschen
 * Den Wert des Scores links oben im Spiel anzeigen und nach jedem Sprung aktualisieren
 * Einen Punktemultiplikator nach jedem 10-ten Sprung vergeben
-* Velocity/Scrollgeschwindigkeit der Welt nach jedem 10-ten Sprung erhöhen
-* Gravitation nach jedem 10-ten Sprung erhöhen
+* Geschwindigkeit des Spiels nach jedem 10-ten Sprung erhöhen, um den multiplizierten Score zu rechtfertigen ;-)
 * Extra-Features (nach Schwierigkeit)
   * (Hintergrund-) Farben ändern
   * Game Over Einblendung mit erzielter Punktzahl
@@ -32,10 +31,7 @@ Noodlejump Template-Projekt für das [#FutureCamp19](https://futurecamp.digital/
 * [Dokumentation der Phaser-Engine](https://photonstorm.github.io/phaser-ce/)
 * [Phaser programmieren lernen](https://phaser.io/learn)
 
-## #FutureCamp19
+## Lokal entwickeln
 
-* Search-driven development
-* Flipcharts um Sachen zu erklären
-* Jeder 5 Sätzen, warum er Programmierer geworden ist
-* Kreppband und Edding
-* Pullrequest vorbereiten mit einzelnen Lösungen
+* Abhängigkeiten installieren mit `npm install`
+* Developmentserver starten mit `npm start`
