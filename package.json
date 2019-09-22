@@ -2,7 +2,8 @@
   "name": "noodlejump",
   "version": "0.0.0",
   "scripts": {
-    "start": "webpack --mode development && webpack-dev-server"
+    "start": "webpack --mode development && webpack-dev-server",
+    "clean": "rm -rf dist node_modules package-lock.json"
   },
   "dependencies": {},
   "devDependencies": {
