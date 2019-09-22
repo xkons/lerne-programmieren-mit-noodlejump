@@ -3,7 +3,7 @@
  * Zum Beispiel werden hier die Plattformen und der Held erzeugt und auch
  * einige Sonderfälle bei der Bewegung der Welt programmiert.
  */
-class NoodlejumpEngine {
+export default class NoodlejumpAdvanced {
 
   /**
    * Lädt einige weitere Bilder, die für das Spiel nötig sind im Rahmen
@@ -107,7 +107,7 @@ class NoodlejumpEngine {
    */
   heldAnlegen() {
     // Neuen "Sprite" anlegen (https://photonstorm.github.io/phaser-ce/Phaser.GameObjectFactory.html#sprite)
-    this.held = game.add.sprite(this.world.centerX, this.world.height - 36, 'held');
+    this.held = this.game.add.sprite(this.world.centerX, this.world.height - 36, 'held');
     this.held.anchor.set(0.5);
     // Sprungkraft des Helden
     this.velocity = 350;

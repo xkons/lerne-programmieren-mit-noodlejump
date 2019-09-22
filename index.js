@@ -1,8 +1,10 @@
+import NoodlejumpAdvanced from './index-advanced.js'
+
 /**
  * NOODLEJUMP
  * ==========
  *                                                                        
- * Die Klasse Noodlejump und die Basisklasse NoodlejumpEngine sind
+ * Die Klasse Noodlejump und die Basisklasse NoodlejumpAdvanced sind
  * verantwortlich für die Spiellogik und all das, was man auf dem Bildschirm
  * sieht. Sie nutzen eine Programmbibliothek names "Phaser". Phaser ist eine
  * Spiele-Engine, wie auch Unreal oder Unity. Nur eben für den Browser.
@@ -10,7 +12,7 @@
  * Die Klasse Noodlejump enthält die Logik für die ersten Programmieraufgaben
  * wie Punktzahlen einblenden, Spiel schwerer machen, etc.
  * 
- * Die Klasse NoodlejumpEngine richtet sich an fortgeschrittene Programmierer
+ * Die Klasse NoodlejumpAdvanced richtet sich an fortgeschrittene Programmierer
  * und erlaub größere Eingriffe, z.B. die Veränderung der Plattformen etc.
  * 
  * Zur Vereinfachung kann man sich merken, dass englische Variablen und
@@ -24,12 +26,12 @@
  * man sich merken: 'this' ist 'Das Spiel'.
  * 
  * Die Funktionen preload(), create(), update() und shutdown() 
- * (findet sich in NoodlejumpEngine) steuern den State (Zustand) von Phaser 
+ * (findet sich in NoodlejumpAdvanced) steuern den State (Zustand) von Phaser 
  * direkt an. 
  * https://photonstorm.github.io/phaser-ce/Phaser.State.html
  * 
  */
-class Noodlejump extends NoodlejumpEngine {
+class Noodlejump extends NoodlejumpAdvanced {
 
   /**
    * Diese Funktion wird ausgeführt, bevor das Spiel geladen wird, um 
@@ -48,7 +50,7 @@ class Noodlejump extends NoodlejumpEngine {
    * https://photonstorm.github.io/phaser-ce/Phaser.State.html#create
    */
   create() {
-    // Ruft eine Funktion aus NoodlejumpEngine auf, die einige spezielle
+    // Ruft eine Funktion aus NoodlejumpAdvanced auf, die einige spezielle
     // Engine-Einstellungen vornimmt und die Welt erzeugt.
     this.weltAnlegen();
 
