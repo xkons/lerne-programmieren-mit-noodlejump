@@ -105,7 +105,7 @@ class Noodlejump extends NoodlejumpAdvanced {
       // Nach jedem 10-ten Sprung..
       if (this.anzahlSpruenge !== 0 && this.anzahlSpruenge % 10 === 0) {
         // .. mache etwas – zum Beispiel das Spiel schwerer ;)
-        this.scoreMultiplicator++;
+        this.punkteMultiplikator++;
       }
 
       // Der eigentliche Sprung bzw. die Bewegung des Helden wird ausgeführt
