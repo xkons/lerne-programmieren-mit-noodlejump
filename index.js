@@ -105,7 +105,7 @@ class Noodlejump extends NoodlejumpAdvanced {
       }
       
       // Spielstandtext aktualisieren	
-      this.scoreText.text = `${this.score} Punkte`;
+      this.punkteAnzeige.text = `${this.score} Punkte`;
 
       // Nach jedem 10-ten Sprung..
       if (this.anzahlSpruenge !== 0 && this.anzahlSpruenge % 10 === 0) {
