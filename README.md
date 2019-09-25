@@ -1,6 +1,6 @@
 # noodlejump-stackblitz
 
-Noodlejump Template-Projekt für das [#FutureCamp19](https://futurecamp.digital/) basierend auf <https://github.com/WolfScholle/noodlejump>.
+Noodlejump ist ein einfaches, Javascript-basiertes Spiel für Programmierkurse basierend auf <https://github.com/WolfScholle/noodlejump>.
 
 ## Neuen Spielplatz anlegen
 
