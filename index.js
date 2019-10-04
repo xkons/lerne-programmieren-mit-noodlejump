@@ -63,6 +63,11 @@ class Noodlejump extends NoodlejumpAdvanced {
     this.punktzahl = 0;
     this.punkteMultiplikator = 1;
     this.punkteAnzeige = this.add.text(0, 0, `0 Punkte`);
+
+    var letztePunktzahl = localStorage.getItem('punktzahl');
+    if (letztePunktzahl) {
+      this.punktzahl = letztePunktzahl;
+    }
   }
 
   /**
@@ -103,6 +108,7 @@ class Noodlejump extends NoodlejumpAdvanced {
         // Danach um 1 erhöht
       } else {
         this.punktzahl = this.punktzahl + 1 * this.punkteMultiplikator;
+        localStorage.setItem('punktzahl', this.punktzahl);
       }
       
       // Spielstandtext aktualisieren	
