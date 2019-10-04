@@ -80,7 +80,9 @@ class Noodlejump extends NoodlejumpAdvanced {
     // Programmierung der Kamerafahrt
     this.kameraYMinimum = Math.min(this.kameraYMinimum, this.held.y - this.game.height + 130);
     this.camera.y = this.kameraYMinimum;
-    
+
+    // Positionieren der Punktezahl innerhalb der Welt	
+    this.punkteAnzeige.y = Math.min(this.kameraYMinimum, 0);	
     this.punkteAnzeige.text = `${this.punktzahl} Punkte`;
 
     this.weltBewegen();
@@ -120,9 +122,9 @@ class Noodlejump extends NoodlejumpAdvanced {
         this.punkteMultiplikator++;
         // lasse Geschwindigkeit und Gravitation nicht über übermenschlichen Wert steigen.
         if (this.velocity < 700 && this.held.body.gravity.y < 1600) {
-        this.held.body.gravity.y = this.held.body.gravity.y * 1.35;
-        this.velocity = this.velocity * 1.2;
-      }
+          this.held.body.gravity.y = this.held.body.gravity.y * 1.35;
+          this.velocity = this.velocity * 1.2;
+        }
       }
 
       // Der eigentliche Sprung bzw. die Bewegung des Helden wird ausgeführt
