@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "webpack --mode development && webpack-dev-server",
+    "build": "webpack --config webpack.config.js --mode=production",
     "clean": "rm -rf dist node_modules package-lock.json"
   },
   "dependencies": {},
