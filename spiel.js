@@ -41,7 +41,7 @@ import NoodlejumpAdvanced from './spiel-advanced.js'
      */
     preload() {
       // Bild des Helden laden
-      this.load.image('held', 'https://raw.githubusercontent.com/BastiTee/noodlejump-stackblitz/master/images/beach-ball.png');
+      this.load.image('held', './images/moritz-avatar.png');
       this.mehrBilderLaden();
     }
   
