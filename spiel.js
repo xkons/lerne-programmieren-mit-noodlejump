@@ -56,7 +56,7 @@ import NoodlejumpAdvanced from './spiel-advanced.js'
   
       // Hintergrundfarbe 
       // https://photonstorm.github.io/phaser-ce/Phaser.Stage.html#backgroundColor
-      this.stage.backgroundColor = '#66BBFF';
+      this.stage.backgroundColor = '#f3e8d5';
   
       // Eingene Zählvariablen
       this.anzahlSpruenge = 0;

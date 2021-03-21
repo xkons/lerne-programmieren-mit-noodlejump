@@ -1,19 +1,33 @@
 export default class GameOver {
     preload() {
-        this.load.spritesheet('button', './images/nochmal-button.png', 200, 59);
+        this.load.spritesheet('button', './images/nochmal-button.png', 194, 49);
+        this.load.image('game-over', './images/game-over.jpg', 500, 334);
     }
 
     create() {
-        this.stage.backgroundColor = '#66BBFF';
+        this.stage.backgroundColor = '#f3e8d5';
         this.cursor = this.input.keyboard.createCursorKeys();
 
-        this.letztePunktzahl = localStorage.getItem('punktzahl');
-        this.add.text(20, 130, `Erreichte Punktzahl:`);
-        this.add.text(this.world.centerX - this.letztePunktzahl.toString().length * 6, 170, this.letztePunktzahl);
+        this.letztePunktzahl = localStorage.getItem('punktzahl') || 0;
+        this.add.text(
+            60,
+            220,
+            `Erreichte Punktzahl`,
+            {
+                fontSize: 20,
+            });
+        this.add.text(
+            this.world.centerX - this.letztePunktzahl.toString().length * 6,
+            250,
+            this.letztePunktzahl,
+            {
+                fontSize: 20,
+            }
+        );
 
         this.gameOverAnzeigen();
 
-        this.add.button(this.world.centerX - 100, 420, 'button', this.wennNochmalGeklickt, this, 2, 1, 0);
+        this.add.button(this.world.centerX - 97, 420, 'button', this.wennNochmalGeklickt, this, 2, 1, 0);
 
         this.highscoreListeAktualisieren(this.letztePunktzahl);
         this.highscoreListeAnzeigen();
@@ -34,11 +48,11 @@ export default class GameOver {
     }
 
     highscoreListeAnzeigen() {
-        this.add.text(100, 210, `Highscore:`, { font: "bold 20px Arial" });
+        this.add.text(100, 275, `Highscore`, { font: "bold 20px Arial" });
         var highscore = JSON.parse(localStorage.getItem('highscore'));
-        var yoffset = 235;
+        var yoffset = 300;
         highscore.forEach((score, index) => {
-            if (index < 8) {
+            if (index < 5) {
                 this.add.text(this.world.centerX - score.toString().length * 5, yoffset, score, { font: "bold 20px Arial" });
                 yoffset += 20;
             }
@@ -50,14 +64,12 @@ export default class GameOver {
     }
 
     gameOverAnzeigen() {
-        var bar = this.add.graphics();
-        bar.beginFill(0x000000, 0.2);
-        bar.drawRect(0, 0, 300, 100);
+        const baecker = this.add.sprite(0, 20, 'game-over');
+        baecker.scale.setTo(0.6,0.6);
 
-        var style = { font: "bold 32px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle" };
+        var style = { font: "bold 20px Arial", fill: "#000", boundsAlignH: "center", boundsAlignV: "middle" };
 
-        var text = this.add.text(0, 0, "Game Over", style);
-        text.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
-        text.setTextBounds(0, 0, 300, 100);
+        var text = this.add.text(0, 0, "Der Bäcker hat dich erwischt", style);
+        text.setTextBounds(0, 0, 300, 40);
       }
 }
