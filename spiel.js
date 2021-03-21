@@ -41,7 +41,8 @@ import NoodlejumpAdvanced from './spiel-advanced.js'
      */
     preload() {
       // Bild des Helden laden
-      this.load.image('held', './images/moritz-avatar.png');
+      const spieler = localStorage.getItem('spieler') || 'moritz';
+      this.load.image('held', `./images/${spieler}-avatar.png`);
       this.mehrBilderLaden();
     }
   

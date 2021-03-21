@@ -1,5 +1,6 @@
 import Noodlejump from './spiel.js'
 import GameOver from './game-over.js'
+import Start from './start.js'
 
 /**
  * Dieser Javascript-Code wird als letztes von der Webseite geladen und 
@@ -16,5 +17,6 @@ const game = new Phaser.Game({
 });
 
 game.state.add('spiel', Noodlejump);
-game.state.add('gameover', GameOver)
-game.state.start('spiel'); 
+game.state.add('gameover', GameOver);
+game.state.add('start', Start)
+game.state.start('start'); 
