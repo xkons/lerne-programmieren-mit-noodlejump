@@ -36,6 +36,12 @@ Noodlejump ist ein einfaches, Javascript-basiertes Spiel für Programmierkurse b
 * Abhängigkeiten installieren mit `npm install`
 * Developmentserver starten mit `npm start`
 
+## Dein Spiel per Link teilen
+
+StackBlitz stellt eine Kopie deines Spiels kostenfrei unter einer URL zur Verfügung.
+
+<img width="881" alt="stackblitz-link-teilen" src="https://user-images.githubusercontent.com/15232701/111906564-59e38880-8a51-11eb-8126-c026fffd4cf5.png">
+
 ## Auf deine eigene Website hochladen
 
 Du willst Noodlejump nicht nur über den Stackblitz link mit deinen Freunden teilen, sondern auf deiner eigenen Website veröffentlichen? Das ist gar nicht schwer:
