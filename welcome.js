@@ -17,11 +17,6 @@ export default class Welcome {
    * https://photonstorm.github.io/phaser-ce/Phaser.State.html#create
    */
   create() {
-    this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-    this.scale.maxWidth = this.game.width;
-    this.scale.maxHeight = this.game.height;
-    this.scale.pageAlignHorizontally = true;
-    this.scale.pageAlignVertically = true;
     // Hintergrundfarbe 
     // https://photonstorm.github.io/phaser-ce/Phaser.Stage.html#backgroundColor
     this.stage.backgroundColor = '#66BBFF';
