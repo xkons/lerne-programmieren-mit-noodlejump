@@ -11,7 +11,7 @@ export default class NoodlejumpAdvanced {
    */
   mehrBilderLaden() {
     // Pixelbild laden (wird für die Plattformen verwendet)
-    this.load.image('pixel', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/pixel_1.png');
+    this.load.image('pixel', './images/pixel_1.png');
     this.load.image('backer', './images/backer-80.png');
   }
 
