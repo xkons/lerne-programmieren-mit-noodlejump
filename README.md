@@ -35,3 +35,12 @@ Noodlejump ist ein einfaches, Javascript-basiertes Spiel für Programmierkurse b
 
 * Abhängigkeiten installieren mit `npm install`
 * Developmentserver starten mit `npm start`
+
+## Auf deine eigene Website hochladen
+
+Du willst Noodlejump nicht nur über den Stackblitz link mit deinen Freunden teilen, sondern auf deiner eigenen Website veröffentlichen? Das ist gar nicht schwer:
+
+1. Die App für deine Website vorbereiten mit `npm run build`.
+2. Die Dateien in dem `dist` Ordner auf den Server deiner Website kopieren (das funktioniert auch in Unterverzeichnissen auf deinem Server).
+
+Nun ist das Spiel schon auf deiner Website verfügbar 🥳
