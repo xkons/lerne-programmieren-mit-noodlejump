@@ -33,13 +33,6 @@ export default class NoodlejumpAdvanced {
    * erzeugt werden.
    */
   weltAnlegen() {
-    // Fenstergröße (https://photonstorm.github.io/phaser-ce/Phaser.ScaleManager.html)
-    this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-    this.scale.maxWidth = this.game.width;
-    this.scale.maxHeight = this.game.height;
-    this.scale.pageAlignHorizontally = true;
-    this.scale.pageAlignVertically = true;
-
     // Spielphysik (https://photonstorm.github.io/phaser-ce/Phaser.Physics.html)
     this.physics.startSystem(Phaser.Physics.ARCADE);
 
