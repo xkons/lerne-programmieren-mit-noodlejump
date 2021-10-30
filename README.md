@@ -4,7 +4,7 @@ Noodlejump ist ein einfaches, Javascript-basiertes Spiel für Programmierkurse b
 
 ## Neuen Spielplatz anlegen
 
-* Noodlejump-Vorlage auf [StackBlitz](https://stackblitz.com/edit/noodlejump) öffnen
+* Noodlejump-Vorlage auf [StackBlitz](https://stackblitz.com/edit/noodlejump-spielplatz) öffnen
 * Neuen "Fork" erstellen
 * Warten bis die Seite neu lädt
 * Los geht's!
