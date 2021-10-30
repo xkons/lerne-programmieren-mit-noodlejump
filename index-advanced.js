@@ -147,8 +147,8 @@ export default class NoodlejumpAdvanced {
       // Bei Touch-Eingabe wird nur einmal die Sprungweite berechnet und
       // beibehalten. Danach muss erst wieder losgelassen werden.
       if (!this.touchEingabeNochAktiv) {
-        var abstandZumHeld = touchEingabeAktiv.x - this.held.x;
-        if (abstandZumHeld <= 0) {
+        var eingabeLinks = this.game.scale.width / 2 > touchEingabeAktiv.x;
+        if (eingabeLinks) {
           this.held.body.velocity.x = -200;
         } else {
           this.held.body.velocity.x = 200;
