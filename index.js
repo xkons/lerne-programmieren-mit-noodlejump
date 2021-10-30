@@ -68,6 +68,12 @@ class Noodlejump extends NoodlejumpAdvanced {
     // Sorge dafür, dass die Punkteanzeige an die Kamerafahrt gekoppelt ist.
     // Dokumentation: https://photonstorm.github.io/phaser-ce/Phaser.Component.FixedToCamera.html#fixedToCamera
     this.punkteAnzeige.fixedToCamera = true;
+
+    // Lese letzte Punktzahl aus, damit man sie auch nach dem Fall noch einmal sehen kann.
+    var letztePunktzahl = localStorage.getItem('punktzahl');
+    if (letztePunktzahl) {
+      this.punktzahl = letztePunktzahl;
+    }
   }
 
   /**
@@ -109,6 +115,7 @@ class Noodlejump extends NoodlejumpAdvanced {
         // Danach um 1 erhöht
       } else {
         this.punktzahl = this.punktzahl + 1 * this.punkteMultiplikator;
+        localStorage.setItem('punktzahl', this.punktzahl);
       }
 
       // Nach jedem 10-ten Sprung..
