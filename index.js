@@ -20,6 +20,3 @@ game.state.add('welcome', Welcome);
 game.state.add('game', Noodlejump);
 game.state.add('gameover', GameOver)
 game.state.start('welcome');
-
-game.state.add('Noodlejump', Noodlejump);
-game.state.start('Noodlejump');
