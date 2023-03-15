@@ -1,15 +1,19 @@
-# noodlejump-stackblitz
+# NoodleJump
 
-Noodlejump ist ein einfaches, Javascript-basiertes Spiel für Programmierkurse basierend auf <https://github.com/WolfScholle/noodlejump>.
+Noodlejump ist ein einfaches, Javascript-basiertes Spiel um spielerisch Programmieren zu lernen.
 
-## Neuen Spielplatz anlegen
+Bevor es mit dem Lernen losgeht, erstelle deinen eigenen Programmierspielplatz indem du die folgenden Schritte befolgst:
 
 * Noodlejump-Vorlage auf [StackBlitz](https://stackblitz.com/edit/noodlejump-spielplatz) öffnen
-* Neuen "Fork" erstellen
+* Klicke auf den "Fork" Button in der linken oberen Ecke dieser Seite
 * Warten bis die Seite neu lädt
 * Los geht's!
 
+Mit diesem Programmierspielplatz bekommst du auch einen eigenen Link, den du mit Freunden und Familie teilen kannst, damit diese deine Version des Spiels spielen können.
+
 ## Programmieraufgaben
+
+Du findest Lösungen für manche der Aufgaben auf [dieser Seite](https://github.com/BastiTee/noodlejump-stackblitz/pulls).
 
 * Bild des Helden austauschen
 * Den Wert des Scores links oben im Spiel anzeigen und nach jedem Sprung aktualisieren
@@ -25,16 +29,14 @@ Noodlejump ist ein einfaches, Javascript-basiertes Spiel für Programmierkurse b
   * Verbieten, dass man aus dem Bildrand springen kann
   * Helden kürzer oder weiter seitlich bewegen lassen
   * Plattformen sich hin und her bewegen lassen (schwer!)
+  
 
-## Nachlesen
+## Mehr über Phaser lernen
+
+Phaser ist eine wiederverwendbare kostenfreie Software, um mit JavaScript 2D-Spiele zu bauen. Indem wir Phaser verwenden, müssen wir uns nicht selbst darum kümmern die Speile-Physik grundlegend zu bauen. Wir können zum Beispiel für jedes Object im Spiel ganz einfach herausfinden ob und wo es von irgendeinem anderen Objekt, wie z.B. dem Spieler, berührt wird.
 
 * [Dokumentation der Phaser-Engine](https://photonstorm.github.io/phaser-ce/)
 * [Phaser programmieren lernen](https://phaser.io/learn)
-
-## Lokal entwickeln
-
-* Abhängigkeiten installieren mit `npm install`
-* Developmentserver starten mit `npm start`
 
 ## Dein Spiel per Link teilen
 
@@ -50,3 +52,15 @@ Du willst Noodlejump nicht nur über den Stackblitz link mit deinen Freunden tei
 2. Die Dateien in dem `dist` Ordner auf den Server deiner Website kopieren (das funktioniert auch in Unterverzeichnissen auf deinem Server).
 
 Nun ist das Spiel schon auf deiner Website verfügbar 🥳
+
+## Lokal entwickeln (auf deinem Computer mit Texteditor, nicht im Browser)
+
+Anforderungen: node muss auf deinem Computer installiert sein. [Link zur Downloadseite von Node](https://nodejs.org/en/download/).
+
+* Lade dir den Quellcode von GitHub herunter
+* Öffne die Kommandozeile (cmd.exe auf Windows, Terminal auf Mac OS)
+* Wechsle zu dem Ordner mit dem Quellcode
+* Abhängigkeiten installieren mit `npm install`
+* Developmentserver starten mit `npm start`
+
+
