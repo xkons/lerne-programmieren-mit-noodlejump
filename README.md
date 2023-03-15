@@ -42,7 +42,9 @@ Phaser ist eine wiederverwendbare kostenfreie Software, um mit JavaScript 2D-Spi
 
 StackBlitz stellt eine Kopie deines Spiels kostenfrei unter einer URL zur Verfügung.
 
-<img width="881" alt="stackblitz-link-teilen" src="https://user-images.githubusercontent.com/15232701/111906564-59e38880-8a51-11eb-8126-c026fffd4cf5.png">
+In diesem Screenshot siehst du wo du den Link findest, um dein Spiel mit anderen zu teilen.
+
+<img width="881" alt="Ein Screenshot von dem Noodlejump Spiel auf dem online Code-Editor Stackblitz. In der linken Hälfte des Bildes ist der Code zu sehen und auf der rechten Seite das Spiel. Direkt über dem Spiel zeigt Stackblitz den Link zum Teilen des Speils" src="https://user-images.githubusercontent.com/15232701/111906564-59e38880-8a51-11eb-8126-c026fffd4cf5.png">
 
 ## Auf deine eigene Website hochladen
 
