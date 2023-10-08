@@ -102,7 +102,7 @@ class Noodlejump extends NoodlejumpAdvanced {
     this.weltAnlegen();
 
     // Erstelle Text in linker oberer Ecke um Punkteanzahl anzuzeigen
-    this.punkteAnzeige = this.add.text(0, 0, `0 Punkte`);
+    this.punkteAnzeige = this.add.text(0, 0, `0 Punkte`, { fill: "#fff" });
     // Sorge dafür, dass die Punkteanzeige an die Kamerafahrt gekoppelt ist.
     // Dokumentation: https://photonstorm.github.io/phaser-ce/Phaser.Component.FixedToCamera.html#fixedToCamera
     this.punkteAnzeige.fixedToCamera = true;
