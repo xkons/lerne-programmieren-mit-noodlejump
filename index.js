@@ -1,4 +1,4 @@
-import NoodlejumpAdvanced from "./index-advanced.js"
+import NoodlejumpAdvanced from "./index-advanced.js";
 
 /**
  * Dies ist eine sogenannte Typdefinition.
@@ -54,6 +54,7 @@ class Noodlejump extends NoodlejumpAdvanced {
    */
   init(initialeDaten) {
     this.punktzahl = initialeDaten.punktzahl;
+    this.punkteMultiplikator = 1;
 
     // Hintergrundfarbe
     // https://photonstorm.github.io/phaser-ce/Phaser.Stage.html#backgroundColor
@@ -73,8 +74,9 @@ class Noodlejump extends NoodlejumpAdvanced {
     // Bild des Helden laden
     this.load.image(
       "held",
-      "https://raw.githubusercontent.com/BastiTee/noodlejump-stackblitz/master/images/nudeln.png"
+      "./images/rakete.png"
     );
+    this.load.image("hintergrund", "./images/hintergrund.jpg");
     this.mehrBilderLaden();
   }
 
@@ -84,9 +86,26 @@ class Noodlejump extends NoodlejumpAdvanced {
    * https://photonstorm.github.io/phaser-ce/Phaser.State.html#create
    */
   create() {
+    // Füge Hintergrundbild ein
+    // Eine Möglichkeit Hintergrundbilder zu gestalten ist über AI-Modelle.
+    // Zum Beispiel hier: https://huggingface.co/spaces/dalle-mini/dalle-mini
+    // Beispiel-Prompt: "paint me a picture with vertical lines in the colours of a rainbow. Spread colourful dots inside it as well. Paint in a cartoon style."
+    this.hintergrundBild = this.add.tileSprite(0, 0, 600, 1016, "hintergrund");
+    this.hintergrundBild.tileScale.x = 0.6;
+    this.hintergrundBild.tileScale.y = 0.6;
+    const spielkoordinate_oben_links = 0;
+    // Link zur Dokumentation: https://photonstorm.github.io/phaser-ce/Phaser.TileSprite.html#alignIn
+    this.hintergrundBild.alignIn(this.game, spielkoordinate_oben_links);
+
     // Ruft eine Funktion aus NoodlejumpAdvanced auf, die einige spezielle
     // Engine-Einstellungen vornimmt und die Welt erzeugt.
     this.weltAnlegen();
+
+    // Erstelle Text in linker oberer Ecke um Punkteanzahl anzuzeigen
+    this.punkteAnzeige = this.add.text(0, 0, `0 Punkte`, { fill: "#fff" });
+    // Sorge dafür, dass die Punkteanzeige an die Kamerafahrt gekoppelt ist.
+    // Dokumentation: https://photonstorm.github.io/phaser-ce/Phaser.Component.FixedToCamera.html#fixedToCamera
+    this.punkteAnzeige.fixedToCamera = true;
   }
 
   /**
@@ -102,6 +121,9 @@ class Noodlejump extends NoodlejumpAdvanced {
       this.held.y - this.game.height + 130
     );
     this.camera.y = this.kameraYMinimum;
+
+    // Spielstandtext aktualisieren	
+    this.punkteAnzeige.text = `${this.punktzahl} Punkte`;
 
     this.weltBewegen();
     this.heldBewegen();
@@ -125,14 +147,19 @@ class Noodlejump extends NoodlejumpAdvanced {
       // Beim ersten Sprung wird die Punktzahl auf 0 gesetzt
       if (this.anzahlSpruenge === 0) {
         this.punktzahl = 0;
-        // Danach um 1 erhöht
       } else {
-        this.punktzahl += 1;
+        this.punktzahl = this.punktzahl + 1 * this.punkteMultiplikator;
       }
 
       // Nach jedem 10-ten Sprung..
       if (this.anzahlSpruenge !== 0 && this.anzahlSpruenge % 10 === 0) {
         // .. mache etwas – zum Beispiel das Spiel schwerer ;)
+        // lasse Geschwindigkeit und Gravitation nicht über übermenschlichen Wert steigen.
+        if (this.velocity < 700 && this.held.body.gravity.y < 1600) {
+          this.held.body.gravity.y = this.held.body.gravity.y * 1.35;
+          this.velocity = this.velocity * 1.2;
+        }
+        this.punkteMultiplikator = this.punkteMultiplikator + 1;
       }
 
       // Der eigentliche Sprung bzw. die Bewegung des Helden wird ausgeführt
