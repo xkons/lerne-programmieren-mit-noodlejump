@@ -1,4 +1,4 @@
-# NoodleJump
+# Lerne Programmieren mit NoodleJump
 
 Noodlejump ist ein einfaches, Javascript-basiertes Spiel um spielerisch Programmieren zu lernen.
 
