@@ -87,6 +87,12 @@ class Noodlejump extends NoodlejumpAdvanced {
     // Ruft eine Funktion aus NoodlejumpAdvanced auf, die einige spezielle
     // Engine-Einstellungen vornimmt und die Welt erzeugt.
     this.weltAnlegen();
+
+    // Erstelle Text in linker oberer Ecke um Punkteanzahl anzuzeigen
+    this.punkteAnzeige = this.add.text(0, 0, `0 Punkte`);
+    // Sorge dafür, dass die Punkteanzeige an die Kamerafahrt gekoppelt ist.
+    // Dokumentation: https://photonstorm.github.io/phaser-ce/Phaser.Component.FixedToCamera.html#fixedToCamera
+    this.punkteAnzeige.fixedToCamera = true;
   }
 
   /**
@@ -102,6 +108,9 @@ class Noodlejump extends NoodlejumpAdvanced {
       this.held.y - this.game.height + 130
     );
     this.camera.y = this.kameraYMinimum;
+
+    // Spielstandtext aktualisieren	
+    this.punkteAnzeige.text = `${this.punktzahl} Punkte`;
 
     this.weltBewegen();
     this.heldBewegen();
