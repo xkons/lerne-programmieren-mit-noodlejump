@@ -183,7 +183,7 @@ export default class NoodlejumpAdvanced {
 
     // Wenn der Held aus der Sicht der Kamera fällt, ist das Spiel vorbei
     if (this.held.y > this.kameraYMinimum + this.game.height && this.held.alive) {
-      this.state.start('Noodlejump');
+      this.state.start('Noodlejump', true, false, { punktzahl: this.punktzahl });
     }
   }
 
