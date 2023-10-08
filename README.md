@@ -4,7 +4,7 @@ Noodlejump ist ein einfaches, Javascript-basiertes Spiel um spielerisch Programm
 
 Bevor es mit dem Lernen losgeht, erstelle deinen eigenen Programmierspielplatz indem du die folgenden Schritte befolgst:
 
-* Noodlejump-Vorlage auf [StackBlitz](https://stackblitz.com/edit/noodlejump-spielplatz) öffnen
+* Noodlejump-Vorlage auf [StackBlitz](https://stackblitz.com/github/xkons/lerne-programmieren-mit-noodlejump) öffnen
 * Klicke auf den "Fork" Button in der linken oberen Ecke dieser Seite
 * Warten bis die Seite neu lädt
 * Los geht's!
@@ -57,7 +57,7 @@ Nun ist das Spiel schon auf deiner Website verfügbar 🥳
 
 ## Lokal entwickeln (auf deinem Computer mit Texteditor, nicht im Browser)
 
-Anforderungen: node muss auf deinem Computer installiert sein. [Link zur Downloadseite von Node](https://nodejs.org/en/download/).
+Anforderungen: node muss auf deinem Computer installiert sein. Dieses Projekt verwendet Node in Version 16. [Link zur Downloadseite von Node](https://nodejs.org/en/download/).
 
 * Lade dir den Quellcode von GitHub herunter
 * Öffne die Kommandozeile (cmd.exe auf Windows, Terminal auf Mac OS)
