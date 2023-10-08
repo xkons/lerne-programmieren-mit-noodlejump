@@ -20,8 +20,7 @@ Du findest Lösungen für manche der Aufgaben auf [dieser Seite](https://github.
 * Einen Punktemultiplikator nach jedem 10-ten Sprung vergeben
 * Geschwindigkeit des Spiels nach jedem 10-ten Sprung erhöhen, um den multiplizierten Score zu rechtfertigen ;-)
 * Ein Hintergrundbild einfügen
-* Extra-Features (nach Schwierigkeit)
-  * (Hintergrund-) Farben ändern
+* Extra-Funktionen (nach Schwierigkeit)
   * Game Over Einblendung mit erzielter Punktzahl
   * Bonusplattformen mit extra Punkten
   * Plattformen enger/weiter auseinander machen
