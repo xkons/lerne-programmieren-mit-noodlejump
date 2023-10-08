@@ -74,7 +74,7 @@ class Noodlejump extends NoodlejumpAdvanced {
     // Bild des Helden laden
     this.load.image(
       "held",
-      "https://raw.githubusercontent.com/BastiTee/noodlejump-stackblitz/master/images/nudeln.png"
+      "./images/rakete.png"
     );
     this.load.image("hintergrund", "./images/hintergrund.jpg");
     this.mehrBilderLaden();
