@@ -1,4 +1,4 @@
-import NoodlejumpAdvanced from "./index-advanced.js"
+import NoodlejumpAdvanced from "./index-advanced.js";
 
 /**
  * Dies ist eine sogenannte Typdefinition.
@@ -76,6 +76,7 @@ class Noodlejump extends NoodlejumpAdvanced {
       "held",
       "https://raw.githubusercontent.com/BastiTee/noodlejump-stackblitz/master/images/nudeln.png"
     );
+    this.load.image("hintergrund", "./images/hintergrund.jpg");
     this.mehrBilderLaden();
   }
 
@@ -85,6 +86,17 @@ class Noodlejump extends NoodlejumpAdvanced {
    * https://photonstorm.github.io/phaser-ce/Phaser.State.html#create
    */
   create() {
+    // Füge Hintergrundbild ein
+    // Eine Möglichkeit Hintergrundbilder zu gestalten ist über AI-Modelle.
+    // Zum Beispiel hier: https://huggingface.co/spaces/dalle-mini/dalle-mini
+    // Beispiel-Prompt: "paint me a picture with vertical lines in the colours of a rainbow. Spread colourful dots inside it as well. Paint in a cartoon style."
+    this.hintergrundBild = this.add.tileSprite(0, 0, 600, 1016, "hintergrund");
+    this.hintergrundBild.tileScale.x = 0.6;
+    this.hintergrundBild.tileScale.y = 0.6;
+    const spielkoordinate_oben_links = 0;
+    // Link zur Dokumentation: https://photonstorm.github.io/phaser-ce/Phaser.TileSprite.html#alignIn
+    this.hintergrundBild.alignIn(this.game, spielkoordinate_oben_links);
+
     // Ruft eine Funktion aus NoodlejumpAdvanced auf, die einige spezielle
     // Engine-Einstellungen vornimmt und die Welt erzeugt.
     this.weltAnlegen();
