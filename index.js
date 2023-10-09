@@ -1,4 +1,5 @@
 import NoodlejumpAdvanced from "./index-advanced.js"
+import GameOver from './game-over.js'
 
 /**
  * Dies ist eine sogenannte Typdefinition.
@@ -161,5 +162,6 @@ const game = new Phaser.Game({
 });
 
 game.state.add("Noodlejump", Noodlejump);
+game.state.add("gameover", GameOver);
 // Link zu dokumentation der Parameter: https://photonstorm.github.io/phaser-ce/Phaser.StateManager.html#start
 game.state.start("Noodlejump", true, false, { punktzahl: 0 });
