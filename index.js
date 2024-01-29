@@ -134,7 +134,7 @@ class Noodlejump extends NoodlejumpAdvanced {
       if (this.anzahlSpruenge !== 0 && this.anzahlSpruenge % 10 === 0) {
         // .. mache etwas – zum Beispiel das Spiel schwerer ;)
         // lasse Geschwindigkeit und Gravitation nicht über übermenschlichen Wert steigen.
-        if (this.velocity < 700 && this.held.body.gravity.y < 1600) {
+        if (this.velocity < 1700 && this.held.body.gravity.y < 6000) {
           this.held.body.gravity.y = this.held.body.gravity.y * 1.35;
           this.velocity = this.velocity * 1.2;
         }
