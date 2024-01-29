@@ -103,7 +103,7 @@ export default class NoodlejumpAdvanced {
     this.held = this.game.add.sprite(this.world.centerX, this.world.height - 36, 'held');
     this.held.anchor.set(0.5);
     // Sprungkraft des Helden
-    this.velocity = 350;
+    this.velocity = 460;
 
     // Verfolge, wo der Held beginnt und wie weit er sich davon entfernt hat (vertikal = yChange)
     this.held.yOrig = this.held.y;
@@ -115,7 +115,7 @@ export default class NoodlejumpAdvanced {
     // Arcade-Physik (https://photonstorm.github.io/phaser-ce/Phaser.Physics.Arcade.html)
     this.physics.arcade.enable(this.held);
     // Anziehungskraft des Helden
-    this.held.body.gravity.y = 500;
+    this.held.body.gravity.y = 890;
     // Kollisionen mit anderen Objekten, d.h. mit Plattformen
     this.held.body.checkCollision.up = false;
     this.held.body.checkCollision.left = false;
@@ -149,18 +149,18 @@ export default class NoodlejumpAdvanced {
       if (!this.touchEingabeNochAktiv) {
         var eingabeLinks = this.game.scale.width / 2 > touchEingabeAktiv.x;
         if (eingabeLinks) {
-          this.held.body.velocity.x = -200;
+          this.held.body.velocity.x = -300;
         } else {
-          this.held.body.velocity.x = 200;
+          this.held.body.velocity.x = 300;
         }
         this.touchEingabeNochAktiv = true;
       }
     } else if (this.cursor.left.isDown) {
       // Pfeil-Links Taste
-      this.held.body.velocity.x = -200;
+      this.held.body.velocity.x = -300;
     } else if (this.cursor.right.isDown) {
       // Pfeil-Rechts Taste
-      this.held.body.velocity.x = 200;
+      this.held.body.velocity.x = 300;
     } else {
       // Ansonsten..  
       this.touchEingabeNochAktiv = false;
