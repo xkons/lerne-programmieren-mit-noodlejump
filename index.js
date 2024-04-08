@@ -1,4 +1,4 @@
-import NoodlejumpAdvanced from "./index-advanced.js"
+import NoodlejumpAdvanced from "./index-advanced.js";
 
 /**
  * Dies ist eine sogenannte Typdefinition.
@@ -73,7 +73,7 @@ class Noodlejump extends NoodlejumpAdvanced {
     // Bild des Helden laden
     this.load.image(
       "held",
-      "https://raw.githubusercontent.com/BastiTee/noodlejump-stackblitz/master/images/nudeln.png"
+      "./images/rakete.png"
     );
     this.mehrBilderLaden();
   }
