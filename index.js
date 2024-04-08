@@ -1,4 +1,4 @@
-import NoodlejumpAdvanced from "./index-advanced.js"
+import NoodlejumpAdvanced from "./index-advanced.js";
 
 /**
  * Dies ist eine sogenannte Typdefinition.
@@ -73,7 +73,7 @@ class Noodlejump extends NoodlejumpAdvanced {
     // Bild des Helden laden
     this.load.image(
       "held",
-      "https://raw.githubusercontent.com/BastiTee/noodlejump-stackblitz/master/images/nudeln.png"
+      "https://raw.githubusercontent.com/xkons/lerne-programmieren-mit-noodlejump/main/images/nudeln.png"
     );
     this.mehrBilderLaden();
   }
@@ -118,7 +118,8 @@ class Noodlejump extends NoodlejumpAdvanced {
     // - Touch-Eingabe verwendet
     // - Pfeil-oben gedrückt wurde
     // - bereits einmal gesprungen wurde
-    var spielBegonnen = touchEingabeAktiv || this.cursor.up.isDown || this.anzahlSpruenge > 0;
+    var spielBegonnen =
+      touchEingabeAktiv || this.cursor.up.isDown || this.anzahlSpruenge > 0;
 
     // Sprung des Helden programmieren
     if (spielBegonnen && this.held.body.touching.down) {

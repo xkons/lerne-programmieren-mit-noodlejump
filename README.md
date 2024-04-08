@@ -13,7 +13,7 @@ Mit diesem Programmierspielplatz bekommst du auch einen eigenen Link, den du mit
 
 ## Programmieraufgaben
 
-Du findest Lösungen für manche der Aufgaben auf [dieser Seite](https://github.com/BastiTee/noodlejump-stackblitz/pulls).
+Du findest Lösungen für manche der Aufgaben auf [dieser Seite](https://github.com/xkons/lerne-programmieren-mit-noodlejump/pulls).
 
 * Bild des Helden austauschen
 * Den Wert des Scores links oben im Spiel anzeigen und nach jedem Sprung aktualisieren
